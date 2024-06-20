@@ -1,9 +1,19 @@
-body{
-  height: 100vh;
+:root{
+  --navbarHeight: 70px
+}
+html{
+  background: rgb(75,129,171);
+  background: linear-gradient(180deg,  rgba(56,47,96,1) 0%, rgba(75,129,171,1) 100%);
+  font-family: monospace;
+}
+body, html{
+  min-height: 100%;
+  min-width: 100%;
   margin: 0;
   padding: 0;
-  background: rgb(75,129,171);
-  background: linear-gradient(180deg,  rgba(56,47,96,1) 0%, rgba(75,129,171,1) 100%);  
+  display: flex;
+  font-family: monospace;
+
 }
 .nav{
   display: grid;
@@ -13,6 +23,11 @@ body{
   align-items: center;
   padding: 10px;
   background-color: #150920;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: var(--navbarHeight);
 }
 .logo{
     display: flex;
@@ -36,10 +51,10 @@ h1,h2,h3,h4{
 }
 .introduction{
   color: #FFCD29;
-  background-color: #110017;
+  background-color: rgba(0,0,0,0.3);
   font-size: 2em;
   display: flex;
-  margin: 60px 300px 0px 300px;
+  margin: 60px 20% 0px 20%;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
@@ -47,4 +62,37 @@ h1,h2,h3,h4{
 
 a:link {
   text-decoration: none; 
+}
+
+.content{
+  margin-top: calc(60px + var(--navbarHeight));
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container{
+  background-color: white;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:15px
+}
+.formSection{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.desc{
+  grid-column: 1/-1;
 }
