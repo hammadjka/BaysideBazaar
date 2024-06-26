@@ -1,9 +1,12 @@
 :root{
   --navbarHeight: 70px
 }
+h1,h2,h3,h4,h5,p{
+  padding: 0;
+  margin: 0;
+}
 html{
-  background: rgb(75,129,171);
-  background: linear-gradient(180deg,  rgba(56,47,96,1) 0%, rgba(75,129,171,1) 100%);
+  background: #fafafa;
   font-family: monospace;
 }
 body, html{
@@ -13,44 +16,46 @@ body, html{
   padding: 0;
   display: flex;
   font-family: monospace;
-
 }
 .nav{
-  display: grid;
-  grid-template-columns: 3fr 6fr;
+  display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  background-color: #150920;
+  padding: 15px 60px 10px 20px;
+	background: #fafafa; 
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   height: var(--navbarHeight);
+  border-bottom: 1px solid black;
 }
 .logo{
-    display: flex;
-    gap: 10px;
-    justify-content: start;
-    align-items: center;
-    padding-left:3%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
 }
-
-h1,h2,h3,h4{
-  padding: 0;
-  margin: 0;
+.links{
+  padding-left: 35px;
+  display: flex;
+  flex: 1;
+  gap: 20px;
 }
 .heroTitle{
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: white;
+  color: black;
   transition: color 0.15s ease-in; 
+  padding-bottom: 15px;
+  padding-top: 10px;
 }
 .heroTitle:hover{
-  color: #FFCD29;
+  color: #ee6f57;
 }
 .introduction{
-  color: #FFCD29;
+  color: #ee6f57;
   background-color: rgba(0,0,0,0.3);
   font-size: 2em;
   display: flex;
@@ -66,11 +71,12 @@ a:link {
 
 .content{
   margin-top: calc(60px + var(--navbarHeight));
-  min-width: 100%;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .form-container{
   background-color: white;
@@ -85,7 +91,7 @@ a:link {
 
 form{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
 }
 .formSection{
@@ -97,7 +103,60 @@ form{
   grid-column: 1/-1;
 }
 textarea{
-  /* resize: none; */
+  resize: none;
   min-width: 400px;
   min-height: 80px;
+}
+.card{
+  color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 5px ;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+.outerCard{
+  width: 240px;
+  font-family:monospace;
+}
+.cardDescription{
+  margin-top: 10px;
+  display: grid;
+  gap:5px;
+  grid-template-columns: 5fr 1fr;
+  justify-content: start;
+  align-items: start;
+}
+
+.cardHolder{
+  display: grid;
+  gap: 40px;
+  padding: 40px 150px 40px 150px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.active{
+  border-bottom: 1px solid black;
+}
+
+.mainC{
+  margin-top: calc(50px + var(--navbarHeight));
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.searchdiv{
+  display: flex;
+  justify-content: center;
+}
+.searchbar{
+  display: flex;
+  color:black;
+  min-width: 300px;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid black;
 }

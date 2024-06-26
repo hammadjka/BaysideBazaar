@@ -1,20 +1,9 @@
-import Image from "next/image";
+// import React, { useState } from 'react'
+import ProductList from "./productList"
+export default function page() {
+    return (
+        // <ProductList category={["1", "2", "3", "4"]}></ProductList>
+        <ProductList category={["electronics", "women's clothing", "men's clothing", "jewelery"]}></ProductList>
 
-export default function Home() {
-  return (
-    <main className="content">
-      <div className="introduction">
-        Whether you're scheduling a doctor's appointment, organizing your closet, or finally fixing that squeaky door, our quirky ticket system turns each task into a VIP experience. Grab a ticket, take on the task, and revel in the joy of crossing it off with a flourish! 
-      </div>
-      <div className="introduction">
-        Whether you're scheduling a doctor's appointment, organizing your closet, or finally fixing that squeaky door, our quirky ticket system turns each task into a VIP experience. Grab a ticket, take on the task, and revel in the joy of crossing it off with a flourish! 
-      </div>
-      <div className="introduction">
-        Whether you're scheduling a doctor's appointment, organizing your closet, or finally fixing that squeaky door, our quirky ticket system turns each task into a VIP experience. Grab a ticket, take on the task, and revel in the joy of crossing it off with a flourish! 
-      </div>
-      <div className="introduction">
-        Whether you're scheduling a doctor's appointment, organizing your closet, or finally fixing that squeaky door, our quirky ticket system turns each task into a VIP experience. Grab a ticket, take on the task, and revel in the joy of crossing it off with a flourish! 
-      </div>
-    </main>
-  );
+    )
 }
