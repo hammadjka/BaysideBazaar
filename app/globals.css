@@ -20,13 +20,14 @@ body, html{
 .nav{
   display: flex;
   gap: 10px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  padding: 15px 60px 10px 20px;
+  padding: 15px 80px 15px 30px;
 	background: #fafafa; 
   position: fixed;
   top: 0;
   width: 100%;
+  box-sizing: border-box;
   z-index: 1000;
   height: var(--navbarHeight);
   border-bottom: 1px solid black;
@@ -36,20 +37,25 @@ body, html{
   gap: 10px;
   justify-content: center;
   align-items: center;
-  width: 280px;
 }
 .links{
-  padding-left: 35px;
+  margin-left: 40px;
   display: flex;
-  flex: 1;
   gap: 20px;
+  justify-self: center;
 }
 .heroTitle{
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: black;
   transition: color 0.15s ease-in; 
-  padding-bottom: 15px;
-  padding-top: 10px;
+  padding-bottom: 7px;
+  padding-top: 12px;
+}
+.checkout{
+  margin-left: auto;
+}
+.active{
+  border-bottom: 1px solid black;
 }
 .heroTitle:hover{
   color: #ee6f57;
@@ -76,7 +82,6 @@ a:link {
   flex-direction: column;
   align-items: center;
 }
-
 
 .form-container{
   background-color: white;
@@ -111,14 +116,35 @@ textarea{
   color: black;
   width: 200px;
   height: 200px;
-  border-radius: 5px ;
+  border-radius: 5px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: end;
   padding: 20px;
 }
+.outerCard > button{
+  background-color: rgba(0,0,0,0.15);
+  background-image: url('../public/plus.svg');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  border: none;
+  font-size: large;
+  border-radius: 50%;
+  margin-left: auto;
+  transition: background-color 0.1s ease-in-out, background-image 0.1s ease-in-out;
+}
+.outerCard>button:hover{
+  background-color: #ee6f57;
+  cursor: pointer;
+  background-image: url('../public/plus2.svg');
+}
 .outerCard{
+  padding: 20px;
   width: 240px;
   font-family:monospace;
+  display: flex;
+  flex-direction: column;
 }
 .cardDescription{
   margin-top: 10px;
@@ -134,10 +160,6 @@ textarea{
   gap: 40px;
   padding: 40px 150px 40px 150px;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-}
-
-.active{
-  border-bottom: 1px solid black;
 }
 
 .mainC{
@@ -159,4 +181,9 @@ textarea{
   border-radius: 5px;
   outline: none;
   border: 1px solid black;
+  transition: border-color 0.2s ease; /* Smooth transition */
+}
+
+.searchbar:focus {
+  border-color: #ee6f57;
 }

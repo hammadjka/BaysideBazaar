@@ -31,6 +31,9 @@ export default function navbar() {
                 <Link href={"/jewelery"}> <h5 className={`heroTitle  ${isActive('/jewelery')}`}>Jewelery</h5></Link>
                 <Link href={"/electronics"}> <h5 className={`heroTitle  ${isActive('/electronics')}`}>Electronics</h5></Link>
             </div>
+            <div className='checkout'>
+                <Link href={"/checkout"}><h5 className={`heroTitle ${isActive('/checkout')}`}>Checkout</h5></Link>
+            </div>
         </nav>
   )
 }

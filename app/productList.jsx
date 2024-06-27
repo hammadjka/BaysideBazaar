@@ -4,14 +4,17 @@ import Card from './card'
 import SearchBar from './searchBar';
 import { useState, useEffect} from 'react'
 import Fuse from 'fuse.js';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function ProductList({category = []}) {
     const [products, setProducts] = useState([]);
     const [filtered, setfiltered] = useState([]);
     const [searchQuery, setSearch] = useState("")
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-      const fetchProducts = async () => {
+        setIsLoading(true); 
+        const fetchProducts = async () => {
         const res = await fetch('https://fakestoreapi.com/products', {
         next: {
             revalidate: 60
@@ -19,8 +22,9 @@ export default function ProductList({category = []}) {
         });
         const data = await res.json();
         setProducts(data); 
-      };
-      fetchProducts();
+        setIsLoading(false); 
+        };
+        fetchProducts();
     }, []);
     
     const options = {
@@ -38,7 +42,13 @@ export default function ProductList({category = []}) {
         const matchedProducts = result.map(res=>res.item)
         setfiltered(matchedProducts);
     }
-
+    if (isLoading) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex:"1" }}>
+                <CircularProgress sx={{ color: '#ee6f57' }} size={80}/>
+            </div>
+        );
+    }
     return (
         <div className='mainC'>
             <SearchBar onSearch={handleSearch}></SearchBar>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-
 export default function card({cardData}) {
   // const imagesArray = JSON.parse(cardData.images); 
   // const backgroundImageUrl = imagesArray && imagesArray.length > 0
@@ -12,10 +11,12 @@ export default function card({cardData}) {
     backgroundSize: 'contain',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    backgroundColor: '#ffffff',
   };
   
   return (
     <div className='outerCard'>
+      <button></button>
       <div style={divStyle} className='card'>
       </div>
       <div className='cardDescription'>
