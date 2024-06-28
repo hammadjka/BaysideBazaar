@@ -1,8 +1,8 @@
 import React from 'react'
 import { useCart } from '../cartContext';
 
-export default function bagItem({itemData}) {
-  const { addProductToCart, decrementQuantity, getProductCount} = useCart(); // Access the addProductToCart function
+export default function BagItem({itemData}) {
+  const { addProductToCart, clearCart, decrementQuantity, getProductCount} = useCart(); // Access the addProductToCart function
   const divStyle = {
     backgroundImage: `url(${itemData.image})`,
     backgroundSize: 'contain',
@@ -13,9 +13,10 @@ export default function bagItem({itemData}) {
   const addProd = ()=>{
     addProductToCart(itemData)
   }
-  const removeProd = ()=>{
+  const decrementProd = ()=>{
     decrementQuantity(itemData)
   }
+
   return (
     <div className='outerBagItem'>
         <div style={divStyle} className='bagItem'>
@@ -30,7 +31,9 @@ export default function bagItem({itemData}) {
             <div className='cartButtonDiv'>
             <button onClick={addProd} className='add'></button>
             <h3 className='count'>{getProductCount(itemData)}</h3>
-            <button onClick={removeProd}  className='remove'></button>
+            <button onClick={decrementProd}  className='remove'></button>
+            <button onClick={clearCart} className='delete'></button>
+
       </div>
         </div>
     </div>
