@@ -26,8 +26,8 @@ export default function Navbar() {
                 </div>
             <div className="links">
                 <Link href={"/"}> <h5  className={`heroTitle ${isActive('/')}`}>All Products</h5></Link>
-                <Link href={"/mens"}> <h5 className={`heroTitle  ${isActive('/mens')}`}>Men's</h5></Link>
-                <Link href={"/womens"}> <h5 className={`heroTitle  ${isActive('/womens')}`}>Women's</h5></Link>
+                <Link href={"/mens"}> <h5 className={`heroTitle  ${isActive('/mens')}`}>Men&apos;s</h5></Link>
+                <Link href={"/womens"}> <h5 className={`heroTitle  ${isActive('/womens')}`}>Women&apos;s</h5></Link>
                 <Link href={"/jewelery"}> <h5 className={`heroTitle  ${isActive('/jewelery')}`}>Jewelery</h5></Link>
                 <Link href={"/electronics"}> <h5 className={`heroTitle  ${isActive('/electronics')}`}>Electronics</h5></Link>
             </div>
