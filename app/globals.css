@@ -6,7 +6,7 @@ h1,h2,h3,h4,h5,p{
   margin: 0;
 }
 html{
-  background: #fafafa;
+  background: white;
   font-family: monospace;
 }
 body, html{
@@ -112,7 +112,20 @@ textarea{
   min-width: 400px;
   min-height: 80px;
 }
-.card{
+
+.outerCard, .outerBagItem{
+  padding: 20px;
+  width: 240px;
+  font-family:monospace;
+  display: flex;
+  flex-direction: column;
+}
+.outerBagItem{
+  flex-direction: row;
+  width: 600px;
+  gap: 20px;
+}
+.card, .bagItem{
   color: black;
   width: 200px;
   height: 200px;
@@ -120,41 +133,63 @@ textarea{
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding: 20px;
+  /* padding: 20px; */
 }
-.outerCard > button{
+.bagItem{
+  max-width: 100px;
+  max-height: 100px;
+}
+.buttonDiv, .cartButtonDiv{
+  display: flex;
+  margin-left: auto;
+  /* margin-bottom: 10px; */
+  border-radius: 5px;
+  gap: 5px;
+  background-color: white;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+}
+.cartButtonDiv{
+  grid-column: 1/-1;
+  align-self: flex-end;
+}
+.add, .remove{
   background-color: rgba(0,0,0,0.15);
   background-image: url('../public/plus.svg');
   background-size: cover;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border: none;
   font-size: large;
-  border-radius: 50%;
-  margin-left: auto;
+  border-radius: 5px;
   transition: background-color 0.1s ease-in-out, background-image 0.1s ease-in-out;
 }
-.outerCard>button:hover{
+.remove{
+  background-image: url('../public/minus.svg');
+}
+.add:hover{
   background-color: #ee6f57;
   cursor: pointer;
   background-image: url('../public/plus2.svg');
 }
-.outerCard{
-  padding: 20px;
-  width: 240px;
-  font-family:monospace;
-  display: flex;
-  flex-direction: column;
+.remove:hover{
+  background-color: #ee6f57;
+  cursor: pointer;
+  background-image: url('../public/minus2.svg');
 }
-.cardDescription{
+.cardDescription, .itemDesc{
   margin-top: 10px;
   display: grid;
   gap:5px;
   grid-template-columns: 5fr 1fr;
   justify-content: start;
   align-items: start;
+  width: 100%;
 }
-
+.itemDesc{
+  justify-content: end;
+}
 .cardHolder{
   display: grid;
   gap: 40px;
@@ -186,4 +221,16 @@ textarea{
 
 .searchbar:focus {
   border-color: #ee6f57;
+}
+.checkoutPage{
+  margin-top: calc(50px + var(--navbarHeight));
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 100%;
+  justify-items: start;
+}
+.orderSummary{
+  padding-left: 10%;
+}
+.billing{
 }

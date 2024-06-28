@@ -17,7 +17,7 @@ export default function ProductList({category = []}) {
         const fetchProducts = async () => {
         const res = await fetch('https://fakestoreapi.com/products', {
         next: {
-            revalidate: 60
+            revalidate: 0
         }
         });
         const data = await res.json();

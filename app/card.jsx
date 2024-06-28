@@ -1,11 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
-export default function card({cardData}) {
-  // const imagesArray = JSON.parse(cardData.images); 
-  // const backgroundImageUrl = imagesArray && imagesArray.length > 0
-  // ? imagesArray[0]
-  // : '';
-  // console.log(`url(${cardData.category.image})`)
+import { useCart } from './cartContext';
+
+export default function Card({cardData}) {
+  const { addProductToCart, decrementQuantity, getProductCount} = useCart(); // Access the addProductToCart function
   const divStyle = {
     backgroundImage: `url(${cardData.image})`,
     backgroundSize: 'contain',
@@ -13,10 +10,19 @@ export default function card({cardData}) {
     backgroundRepeat: 'no-repeat',
     backgroundColor: '#ffffff',
   };
-  
+  const addProd = ()=>{
+    addProductToCart(cardData)
+  }
+  const removeProd = ()=>{
+    decrementQuantity(cardData)
+  }
   return (
     <div className='outerCard'>
-      <button></button>
+      <div className='buttonDiv'>
+        <button onClick={addProd} className='add'></button>
+        <h3 className='count'>{getProductCount(cardData)}</h3>
+        <button onClick={removeProd}  className='remove'></button>
+      </div>
       <div style={divStyle} className='card'>
       </div>
       <div className='cardDescription'>
